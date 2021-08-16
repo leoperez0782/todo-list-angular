@@ -2,6 +2,8 @@
 
 Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
+## Parte B
+Se agrega un script de base de datos dentro de la carpeta app. El motor de base de datos elegidos es MySQL.
 ## Production sever
 
 Para probar localmente como se vería la aplicación en producción, abrir una terminal en la carpeta del proyecto y ejecutar `ng build --watch`. Luego abrir otra terminal en la misma carpeta, e instalar [lite-server](https://github.com/johnpapa/lite-server).
