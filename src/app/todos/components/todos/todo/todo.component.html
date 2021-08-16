@@ -1,0 +1,47 @@
+<!-- <div>
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <div class="card">
+      <div class="card-header">
+        ID: {{ todo.id }}
+
+        <div class="input-group mb-3">
+          <div *ngIf="isEditing" class="input-group-text">
+            <input
+              class="form-check-input mt-0"
+              type="checkbox"
+              [value]="todo.status"
+              (change)="onStatusChange($event)"
+            />
+          </div>
+          <input type="text" class="form-control" formControlName="status" [value]="todo.status" />
+        </div>
+      </div>
+      <div class="card-body">
+
+        <input type="text" class="form-control" formControlName="description" [value]="todo.description">
+      </div>
+      <div class="card-footer">
+        <div *ngIf="todo.expireDate; else elseBlock" class="text-muted">
+          Fecha límite: {{ todo.expireDate | date }}
+        </div>
+        <ng-template #elseBlock>
+          <div class="text-muted">
+            Fecha límite sin asignar.
+            <div>
+              <input type="date" class="form-control" (change)="onDatePickerChage($event)" formControlName="expireDate" [value]="todo.expireDate | date" />
+            </div>
+
+          </div>
+        </ng-template>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="submit" class="btn btn-outline-primary mt-1" >
+            <span class="material-icons"> save </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div> -->

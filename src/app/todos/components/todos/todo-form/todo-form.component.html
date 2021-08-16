@@ -1,0 +1,47 @@
+<div *ngIf="todo">
+  <form #todoForm="ngForm" (ngSubmit)="onSubmit(todoForm)">
+    <div class="card">
+      <div class="card-header">
+        ID: {{ todo.id }}
+
+        <div class="input-group mb-3">
+          <div *ngIf="isEditing" class="input-group-text">
+            <input
+              class="form-check-input mt-0"
+              type="checkbox"
+              [value]="todo.status == 'pending'"
+              (change)="onStatusChange($event)"
+            />
+
+          </div>
+          <input type="text" class="form-control" name="status" [(ngModel)]="todo.status" />
+        </div>
+      </div>
+      <div class="card-body">
+
+        <input type="text" class="form-control" name="description" [(ngModel)]="todo.description">
+      </div>
+      <div class="card-footer">
+          <div [hidden]="!todo.expireDate">
+            Fecha límite: {{ todo.expireDate | date }}
+          </div>
+          <div [hidden]="todo.expireDate">
+            <input type="date" class="form-control"
+            name="expireDate" [ngModel]="todo.expireDate | date" (ngModelChange)="todo.expireDate=$event" />
+          </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="submit" class="btn btn-outline-primary mt-1" >
+            <span class="material-icons"> save </span>
+          </button>
+          <button type="button" (click)="undoChanges($event)" class="btn btn-outline-danger mt-1" >
+            <span class="material-icons">
+              undo
+              </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>

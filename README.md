@@ -1,7 +1,24 @@
 # TodoList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+Proyecto generado con [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
+## Production sever
+
+Para probar localmente como se vería la aplicación en producción, abrir una terminal en la carpeta del proyecto y ejecutar `ng build --watch`. Luego abrir otra terminal en la misma carpeta, e instalar [lite-server](https://github.com/johnpapa/lite-server).
+La instalación recomendada para lite-server es local al proyecto, para hacerlo :
+```
+  npm install lite-server --save-dev
+  yarn add lite-server --dev # or yarn
+```
+Luego de instalado, agregar la siguiente configuracion al archivo package.json:
+``` 
+# Inside package.json...
+  "scripts": {
+    "dev": "lite-server"
+  },
+
+```
+Para levantar la aplicación ejecutar `npx lite-server --baseDir="dist/todo-list"`
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

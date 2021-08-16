@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row justify-content-md-center">
+    <div class="col-6">
+      <h2>Todo List</h2>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col"></div>
+    <div class="col-6">
+      <ul class="list-group list-group-flush">
+        <li
+          *ngFor="let todo of todos"
+          [ngClass]="{
+            'list-group-item': true,
+            'list-group-item-action': true,
+            'list-group-item-primary': todo === selectedTodo
+          }"
+          (click)="onSelect(todo)"
+        >
+         <app-todo-item [todo]="todo"></app-todo-item>
+        </li>
+      </ul>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

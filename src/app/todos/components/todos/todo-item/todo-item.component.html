@@ -1,0 +1,50 @@
+<div *ngIf="todo">
+  <div class="card">
+    <div class="card-header">
+      ID: {{ todo.id }}
+
+      <div class="input-group mb-3">
+        <div class="input-group-text">
+          <input
+            class="form-check-input mt-0"
+            type="checkbox"
+            [value]="todo.status"
+            (change)="onStatusChange($event)"
+            disabled
+          />
+        </div>
+        <input
+          type="text"
+          disabled="true"
+          class="form-control"
+          [value]="todo.status"
+        />
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ todo.description }}</p>
+    </div>
+    <div class="card-footer">
+      <div *ngIf="todo.expireDate; else elseBlock" class="text-muted">
+        Fecha límite: {{ todo.expireDate | date }}
+      </div>
+      <ng-template #elseBlock>
+        <div class="text-muted">Fecha límite sin asignar.
+          <!-- <input type="date" (change)="onDatePickerChage($event)" disabled> -->
+        </div>
+      </ng-template>
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-outline-primary mt-1">
+          <a routerLink="/todo/{{todo.id}}">
+
+            <span class="material-icons"> edit_note </span>
+          </a>
+        </button>
+        <button type="button" class="btn btn-outline-danger mt-1" (click)="onDelete(todo)">
+          <span class="material-icons"> delete_outline </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
