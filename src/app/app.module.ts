@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,7 @@ import { PreventPendingChangesGuard } from './todos/services/prevent-pending-cha
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
     BackButtonDisableModule.forRoot({
       preserveScrollPosition: true,

@@ -111,6 +111,7 @@ export class TodoFormComponent implements OnInit, ComponentCanDeactivate {
       this.todo = { id: this.todo.id, ...todoForm.value };
     } else {
       this.todoService.addTodo({ ...todoForm.value });
+
     }
 
     this.router.navigate(['/list']);
